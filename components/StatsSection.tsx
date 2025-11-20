@@ -54,7 +54,7 @@ export default function StatsSection() {
               className="opacity-0 animate-[slide-in-up_1s_ease-out_forwards]"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <GlassCard variant={stat.variant} hover>
+              <GlassCard variant="primary" hover>
                 <div className="text-center">
                   {/* Icon */}
                   <div className="text-6xl mb-6 animate-[float_3s_ease-in-out_infinite]" style={{ animationDelay: `${index * 0.5}s` }}>
