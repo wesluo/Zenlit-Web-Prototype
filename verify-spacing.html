@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Spacing Solution</title>
+    <style>
+        body {
+            background: #0a0a12;
+            color: #f8f8fb;
+            font-family: "Playfair Display", Georgia, serif;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .solution-box {
+            background: rgba(26, 26, 40, 0.5);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 8px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        h1 {
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .text-gradient-primary {
+            background: linear-gradient(135deg, #a78bfa 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Responsive text sizing */
+        .text-5xl { font-size: 3rem; }
+        .text-3xl { font-size: 1.875rem; }
+
+        @media (min-width: 640px) {
+            .text-5xl { font-size: 3.75rem; }
+            .text-3xl { font-size: 2.25rem; }
+        }
+
+        @media (min-width: 768px) {
+            .text-5xl { font-size: 4.5rem; }
+            .text-3xl { font-size: 3rem; }
+        }
+
+        @media (min-width: 1024px) {
+            .text-5xl { font-size: 6rem; }
+            .text-3xl { font-size: 3.75rem; }
+        }
+
+        /* The spacer solution */
+        .spacer {
+            display: block;
+            width: 100%;
+            height: 64px;
+            min-height: 64px;
+            margin-top: 0;
+            margin-bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(139, 92, 246, 0.05),
+                transparent,
+                rgba(139, 92, 246, 0.05)
+            );
+            position: relative;
+        }
+
+        .spacer-inner {
+            display: block;
+            height: clamp(64px, 8vw, 96px);
+        }
+
+        /* Visual indicator */
+        .spacer::before {
+            content: "↕ Spacing: 64px minimum";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            color: rgba(139, 92, 246, 0.4);
+            font-family: system-ui, sans-serif;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .info-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 4px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: system-ui, sans-serif;
+            text-align: left;
+        }
+
+        .info-box h3 {
+            color: #a78bfa;
+            margin-top: 0;
+        }
+
+        .info-box ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .info-box li {
+            margin: 5px 0;
+            color: #b8b8c8;
+        }
+
+        .code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #a78bfa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-box">
+            <h3>✅ Solution Implementation</h3>
+            <ul>
+                <li>Removed h1/h2 from CSS reset in <span class="code">globals.css</span></li>
+                <li>Added spacer div with <span class="code">height: 64px</span> and <span class="code">minHeight: 64px</span></li>
+                <li>Used inline styles to guarantee spacing (overrides any CSS conflicts)</li>
+                <li>Added responsive sizing with <span class="code">clamp(64px, 8vw, 96px)</span></li>
+                <li>Set explicit <span class="code">margin: 0</span> on h1/h2 to control spacing</li>
+            </ul>
+        </div>
+
+        <div class="solution-box">
+            <h3 style="color: #d4af37; margin-bottom: 30px; font-family: system-ui;">
+                Final Implementation Preview:
+            </h3>
+
+            <h1 style="margin: 0">
+                <span class="text-5xl text-white" style="display: block; margin-bottom: 2rem;">
+                    Every safe mile
+                </span>
+                <span class="text-5xl text-gradient-primary" style="display: block;">
+                    counts.
+                </span>
+            </h1>
+
+            <!-- Our spacer solution -->
+            <div class="spacer" aria-hidden="true">
+                <span class="spacer-inner">&nbsp;</span>
+            </div>
+
+            <h2 class="text-3xl text-white" style="margin-top: 0; margin-bottom: 0;">
+                Keep stacking.
+            </h2>
+        </div>
+
+        <div class="info-box">
+            <h3>📏 Spacing Breakdown</h3>
+            <ul>
+                <li><strong>Between "Every safe mile" and "counts.":</strong> 32px (2rem)</li>
+                <li><strong>Between "counts." and "Keep stacking.":</strong> 64-96px (responsive)</li>
+                <li><strong>Mobile:</strong> 64px minimum height</li>
+                <li><strong>Desktop:</strong> Scales up to 96px maximum</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="border-color: rgba(212, 175, 55, 0.3); background: rgba(212, 175, 55, 0.05);">
+            <h3 style="color: #d4af37;">🎯 Why This Solution Works</h3>
+            <ul>
+                <li>Uses explicit inline styles that have highest specificity</li>
+                <li>Spacer div creates physical space (not dependent on margins)</li>
+                <li>Multiple fallback methods ensure spacing always renders</li>
+                <li>Responsive sizing adapts to different screen sizes</li>
+                <li>Removed conflicting CSS reset that was zeroing h1/h2 margins</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

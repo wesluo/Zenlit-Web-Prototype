@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacing Test</title>
+    <style>
+        body {
+            background: #0a0a12;
+            color: white;
+            font-family: Georgia, serif;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* The spacer div approach */
+        .spacer-64 {
+            height: 64px;
+        }
+
+        .spacer-80 {
+            height: 80px;
+        }
+
+        .spacer-96 {
+            height: 96px;
+        }
+
+        /* Visual guide to show spacing */
+        .spacing-guide {
+            background: rgba(139, 92, 246, 0.1);
+            border-top: 1px dashed rgba(139, 92, 246, 0.3);
+            border-bottom: 1px dashed rgba(139, 92, 246, 0.3);
+            position: relative;
+        }
+
+        .spacing-guide::after {
+            content: attr(data-height);
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: rgba(139, 92, 246, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Testing Spacing Between</h1>
+
+        <h2>Example 1: 64px spacing</h2>
+        <h1>
+            <span class="gradient-text">counts.</span>
+        </h1>
+
+        <div class="spacer-64 spacing-guide" data-height="64px"></div>
+
+        <h2>Keep stacking.</h2>
+
+        <br><br><br>
+        <hr style="opacity: 0.2;">
+        <br><br><br>
+
+        <h2>Example 2: 80px spacing</h2>
+        <h1>
+            <span class="gradient-text">counts.</span>
+        </h1>
+
+        <div class="spacer-80 spacing-guide" data-height="80px"></div>
+
+        <h2>Keep stacking.</h2>
+
+        <br><br><br>
+        <hr style="opacity: 0.2;">
+        <br><br><br>
+
+        <h2>Example 3: 96px spacing</h2>
+        <h1>
+            <span class="gradient-text">counts.</span>
+        </h1>
+
+        <div class="spacer-96 spacing-guide" data-height="96px"></div>
+
+        <h2>Keep stacking.</h2>
+
+        <br><br><br>
+        <hr style="opacity: 0.2;">
+        <br><br><br>
+
+        <h2>Our Implementation (responsive):</h2>
+        <p>Mobile: 64px (h-16) | Tablet: 80px (h-20) | Desktop: 96px (h-24)</p>
+        <h1>
+            <span class="gradient-text">counts.</span>
+        </h1>
+
+        <div class="spacer-64 spacing-guide" data-height="64px minimum"></div>
+
+        <h2>Keep stacking.</h2>
+    </div>
+</body>
+</html>

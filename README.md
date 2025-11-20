@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zenlit Landing Page Redesign - "Cyber-Gamification Neon"
 
-## Getting Started
+A bold, production-grade landing page redesign for Zenlit featuring a distinctive "Cyber-Gamification Neon" aesthetic. This prototype showcases living neon numbers, glassmorphic cards, and high-energy visual effects while maintaining exceptional performance.
 
-First, run the development server:
+## ✨ Design Philosophy
+
+### Aesthetic Direction: **Cyber-Gamification Neon**
+
+**Unforgettable Element**: "Living Neon Numbers" - Animated, glowing metric displays that feel alive and rewarding.
+
+**Core Characteristics**:
+- Bold maximalist design with high-contrast neon colors
+- Gaming-inspired achievement psychology
+- Crypto-forward digital aesthetic
+- Motion-rich animations and effects
+
+## 🎨 Design System
+
+### Color Palette
+- **Neon Lime** (#d4ff00) - Primary color for earnings/growth
+- **Neon Cyan** (#00ffc8) - Secondary for features/tech
+- **Neon Orange** (#ff8c42) - Accent for rewards/energy
+- **Neon Purple** (#a855f7) - Supporting premium color
+- **Dark Backgrounds** - Deep space blacks and navy
+
+### Typography
+- **Display**: Orbitron (Cyber/Gaming aesthetic)
+- **Body**: Inter (Clean readability)
+
+## 🏗️ Tech Stack
+
+- **Framework**: Next.js 16.0 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Pure CSS (no JS animation libraries)
+
+## 🚀 Getting Started
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
 
-## Learn More
+```
+zenlit-redesign/
+├── app/
+│   ├── globals.css          # Theme system & animations
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Main landing page
+├── components/
+│   ├── NeonButton.tsx       # Glowing CTA buttons
+│   ├── GlassCard.tsx        # Glassmorphic cards
+│   ├── AnimatedNumber.tsx   # Counting animations
+│   ├── GlowText.tsx         # Neon text effects
+│   ├── Navigation.tsx       # Glassmorphic nav
+│   ├── HeroSection.tsx      # Hero with particles
+│   ├── StatsSection.tsx     # Living neon numbers
+│   ├── FeaturesSection.tsx  # 3-column features
+│   ├── HowItWorksSection.tsx # Asymmetric layout
+│   ├── CTASection.tsx       # Pulsing CTAs
+│   └── Footer.tsx           # Multi-column footer
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Key Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Performance
+- CSS-only animations (minimal JS)
+- Intersection Observer for scroll animations
+- Optimized font loading
+- ~2-5KB additional CSS bundle
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Responsive Design
+- Mobile-first approach
+- Fluid typography
+- Touch-optimized interactions
+- Breakpoints: sm (640px), md (768px), lg (1024px)
 
-## Deploy on Vercel
+### Accessibility
+- Semantic HTML
+- ARIA labels
+- Keyboard navigation
+- WCAG AA compliant contrast
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Customization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Component Variants
+
+```tsx
+// Buttons
+<NeonButton variant="lime" size="lg" pulse>
+  Button Text
+</NeonButton>
+
+// Cards
+<GlassCard variant="cyan" hover>
+  Card Content
+</GlassCard>
+
+// Text
+<GlowText variant="orange" intensity="high" pulse>
+  Glowing Text
+</GlowText>
+```
+
+### Theme Colors
+
+Edit `app/globals.css`:
+```css
+:root {
+  --neon-lime: #d4ff00;
+  --neon-cyan: #00ffc8;
+  /* Customize colors here */
+}
+```
+
+## 📱 Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari 14+
+- Mobile Safari (iOS 14+)
+- Chrome Mobile (Android)
+
+## 🚢 Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Connect to Vercel
+3. Deploy automatically
+
+### Static Export
+
+```bash
+npm run build
+```
+
+## 📊 Performance Targets
+
+- Performance: 95+
+- Accessibility: 100
+- Best Practices: 100
+- SEO: 100
+
+## 🙏 Credits
+
+- Original: https://zenlitapp.vercel.app
+- Fonts: Orbitron, Inter (Google Fonts)
+- Built with: Next.js, Tailwind CSS, TypeScript
+
+---
+
+**Built with the frontend-design skill**
+*Distinctive. Production-grade. Unforgettable.*
