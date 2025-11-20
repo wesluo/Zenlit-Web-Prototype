@@ -1,38 +1,43 @@
-# Zenlit Landing Page Redesign - "Cyber-Gamification Neon"
+# Zenlit Landing Page Redesign
 
-A bold, production-grade landing page redesign for Zenlit featuring a distinctive "Cyber-Gamification Neon" aesthetic. This prototype showcases living neon numbers, glassmorphic cards, and high-energy visual effects while maintaining exceptional performance.
+A modern, elegant landing page redesign for Zenlit featuring a clean minimal aesthetic with purple/gold accents. This production-ready site showcases glassmorphic design, optimized video backgrounds, and sophisticated animations while maintaining exceptional performance.
+
+**Live Demo**: https://zenlitclaude.vercel.app
 
 ## ✨ Design Philosophy
 
-### Aesthetic Direction: **Cyber-Gamification Neon**
+### Aesthetic Direction: **Modern Minimal Elegance**
 
-**Unforgettable Element**: "Living Neon Numbers" - Animated, glowing metric displays that feel alive and rewarding.
+**Key Features**: Clean design with strategic neon accents, optimized video hero background, and refined typography for professional appeal.
 
 **Core Characteristics**:
-- Bold maximalist design with high-contrast neon colors
-- Gaming-inspired achievement psychology
-- Crypto-forward digital aesthetic
-- Motion-rich animations and effects
+- Dark theme with purple (#8B5CF6) and gold (#d4a574) accents
+- Glassmorphic UI elements with subtle shadows
+- Optimized video backgrounds with gradient fallbacks
+- Smooth, performance-focused animations
 
 ## 🎨 Design System
 
 ### Color Palette
-- **Neon Lime** (#d4ff00) - Primary color for earnings/growth
-- **Neon Cyan** (#00ffc8) - Secondary for features/tech
-- **Neon Orange** (#ff8c42) - Accent for rewards/energy
-- **Neon Purple** (#a855f7) - Supporting premium color
-- **Dark Backgrounds** - Deep space blacks and navy
+- **Primary Purple** (#8B5CF6) - Main brand color for CTAs and accents
+- **Accent Gold** (#d4a574) - Secondary accent for luxury touch
+- **Neon Lime** (#d4ff00) - Accent color from mobile app
+- **Neon Cyan** (#00ffc8) - Accent color from mobile app
+- **Neon Orange** (#ff8c42) - Accent color from mobile app
+- **Dark Backgrounds** - Deep blacks and grays for elegant contrast
 
 ### Typography
-- **Display**: Orbitron (Cyber/Gaming aesthetic)
-- **Body**: Inter (Clean readability)
+- **Display**: Playfair Display (Editorial elegance)
+- **Body**: DM Sans (Modern readability)
 
 ## 🏗️ Tech Stack
 
-- **Framework**: Next.js 16.0 (App Router)
-- **Language**: TypeScript
+- **Framework**: Next.js 16.0.3 (App Router with Turbopack)
+- **Language**: TypeScript 5
 - **Styling**: Tailwind CSS v4
-- **Animations**: Pure CSS (no JS animation libraries)
+- **Animations**: Pure CSS with custom keyframes
+- **Deployment**: Vercel (auto-deploy from GitHub)
+- **Video**: Optimized MP4/WebM formats for hero background
 
 ## 🚀 Getting Started
 
@@ -61,20 +66,27 @@ npm start
 zenlit-redesign/
 ├── app/
 │   ├── globals.css          # Theme system & animations
-│   ├── layout.tsx            # Root layout
-│   └── page.tsx              # Main landing page
+│   ├── layout.tsx            # Root layout with fonts
+│   └── page.tsx              # Main landing page composition
 ├── components/
-│   ├── NeonButton.tsx       # Glowing CTA buttons
-│   ├── GlassCard.tsx        # Glassmorphic cards
-│   ├── AnimatedNumber.tsx   # Counting animations
-│   ├── GlowText.tsx         # Neon text effects
-│   ├── Navigation.tsx       # Glassmorphic nav
-│   ├── HeroSection.tsx      # Hero with particles
-│   ├── StatsSection.tsx     # Living neon numbers
-│   ├── FeaturesSection.tsx  # 3-column features
-│   ├── HowItWorksSection.tsx # Asymmetric layout
-│   ├── CTASection.tsx       # Pulsing CTAs
-│   └── Footer.tsx           # Multi-column footer
+│   ├── Navigation.tsx        # Sticky navigation with glassmorphism
+│   ├── HeroSection.tsx       # Hero with optimized video background
+│   ├── FeaturesSection.tsx   # "Why Zenlit" features with decorative numbers
+│   ├── HowItWorksSection.tsx # 3-step timeline with cards
+│   ├── CTASection.tsx        # Call-to-action section
+│   ├── Footer.tsx            # Footer with links and social
+│   ├── GlassCard.tsx         # Reusable glassmorphic card component
+│   ├── NeonButton.tsx        # Button with hover effects
+│   ├── GlowText.tsx          # Text with gradient effects
+│   ├── AnimatedNumber.tsx    # Counting number animations
+│   └── StatsSection.tsx      # Statistics display component
+├── public/
+│   ├── zenlit-hero-video.mp4    # Optimized hero video (2.9MB)
+│   ├── zenlit-hero-video.webm   # WebM format (1.4MB)
+│   ├── images/                  # SVG illustrations
+│   └── Zenlit logo.png          # Brand logo
+├── REDESIGN_PLAN.md         # Original redesign specifications
+└── SPACING-IMPROVEMENTS.md  # Documentation of spacing fixes
 ```
 
 ## 🎯 Key Features
@@ -141,14 +153,22 @@ Edit `app/globals.css`:
 
 ### Vercel (Recommended)
 
-1. Push to GitHub
-2. Connect to Vercel
-3. Deploy automatically
+This project is configured for automatic deployment:
 
-### Static Export
+1. **Push to GitHub**: `git push origin main`
+2. **Auto-Deploy**: Vercel automatically builds and deploys
+3. **Production URL**: https://zenlitclaude.vercel.app
+
+**Configuration**:
+- Connected to GitHub repo: `wesluo/Zenlit-Web-Prototype`
+- Production branch: `main`
+- Auto-deployments enabled
+- Domain alias automatically updates
+
+### Manual Deployment
 
 ```bash
-npm run build
+vercel deploy --prod
 ```
 
 ## 📊 Performance Targets
