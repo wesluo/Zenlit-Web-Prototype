@@ -8,20 +8,24 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Sophisticated Background Layers */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background - Lowest layer */}
+        {/* Video Background - Lowest layer (only loads if file exists) */}
         <video
           autoPlay
           muted
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E"
         >
-          <source src="/Zenlit Output Vid 1080p.mov" type="video/quicktime" />
-          Your browser does not support the video tag.
+          <source src="/Zenlit%20Output%20Vid%201080p.mov" type="video/quicktime" />
+          <source src="/zenlit-video.mp4" type="video/mp4" />
         </video>
 
+        {/* Animated gradient background as fallback */}
+        <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary animate-[gradient_8s_ease_infinite]"></div>
+
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Deep gradient base */}
         <div className="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary opacity-70"></div>
