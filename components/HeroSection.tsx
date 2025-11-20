@@ -8,21 +8,31 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Sophisticated Background Layers */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background - Lowest layer (only loads if file exists) */}
+        {/* Animated gradient background - Always visible as base layer */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-indigo-900/30 to-purple-900/40"
+          style={{
+            backgroundSize: '400% 400%',
+            animation: 'gradient 8s ease infinite'
+          }}
+        ></div>
+
+        {/* Video Background - Layered on top of gradient */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
           poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3C/svg%3E"
         >
+          {/* WebM for modern browsers (smaller file size) */}
+          <source src="/zenlit-hero-video.webm" type="video/webm" />
+          {/* MP4 for broader compatibility */}
+          <source src="/zenlit-hero-video.mp4" type="video/mp4" />
+          {/* Fallback to original if needed (Safari/Apple devices) */}
           <source src="/Zenlit%20Output%20Vid%201080p.mov" type="video/quicktime" />
-          <source src="/zenlit-video.mp4" type="video/mp4" />
         </video>
-
-        {/* Animated gradient background as fallback */}
-        <div className="absolute inset-0 bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary animate-[gradient_8s_ease_infinite]"></div>
 
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-black/30"></div>

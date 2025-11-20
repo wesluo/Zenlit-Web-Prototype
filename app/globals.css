@@ -357,3 +357,13 @@ body::after {
     background-position: 100% 50%;
   }
 }
+
+/* Smooth video fade-in animation */
+@keyframes video-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
